@@ -40,3 +40,37 @@ function deleteSelected() {
         }
     }
 }
+
+function save(){
+	var canvas1 = document.getElementById( 'drawing' );
+
+	var ctx = canvas1.getContext('2d'),
+    	w = canvas1.width,
+    	h = canvas1.height,
+    	img = new Image();
+    download(canvas1, 'test.png');
+}
+
+function download(canvas111, filename) {
+    
+    if (typeof filename !== 'string' || filename.trim().length === 0)
+        filename = 'Untitled';
+    
+    var lnk = document.createElement('a'),
+        e;
+    
+    lnk.download = filename;		
+    lnk.href = canvas111.toDataURL();	
+    
+    if (document.createEvent) {
+        
+        e = document.createEvent("MouseEvents");
+        e.initMouseEvent("click", true, true, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+        
+        lnk.dispatchEvent(e);
+        
+    } else if (lnk.fireEvent) {
+        
+        lnk.fireEvent("onclick");
+    }
+}
