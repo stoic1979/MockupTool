@@ -14,15 +14,15 @@ var text = new fabric.IText('HELLO',{fontSize:16,left:20,top:20});
 canvas.add(text);
 
 document.querySelectorAll('.square')[0].addEventListener('click', function(){
-  canvas.add(new fabric.Rect({left: 0, top: 0, fill: '#ddd', width: 100, height: 100, stroke: '#222', strokeWidth: 2}));
+  canvas.add(new fabric.Rect({left: 0, top: 0, fill: canvas.freeDrawingBrush.color, width: 100, height: 100, stroke: '#222', strokeWidth: 2}));
 });
     
 document.querySelectorAll('.circle')[0].addEventListener('click', function(){
-  canvas.add(new fabric.Circle({radius: 50, fill: '#000', left: 0, top: 0}));
+  canvas.add(new fabric.Circle({radius: 50, fill: canvas.freeDrawingBrush.color, left: 0, top: 0}));
 });
     
 document.querySelectorAll('.triangle')[0].addEventListener('click', function(){
-  canvas.add(new fabric.Triangle({ width: 100, height: 100, fill: '#000', left: 0, top: 0 }));
+  canvas.add(new fabric.Triangle({ width: 100, height: 100, fill: canvas.freeDrawingBrush.color, left: 0, top: 0 }));
 });
 
 
@@ -74,3 +74,10 @@ function download(canvas111, filename) {
         lnk.fireEvent("onclick");
     }
 }
+
+
+    document.getElementById('colorpicker').addEventListener('change', function (e) {
+        console.log(e.target.value);
+         canvas.freeDrawingBrush.color = e.target.value;
+    });
+    
