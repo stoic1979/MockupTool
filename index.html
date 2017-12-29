@@ -9,20 +9,25 @@
 
 <body bgcolor="#444444">
 
-<button class="square">Square</button>
-<button class="circle">Circle</button>
-<button class="triangle">Triangle</button>
-<input type="color" id="colorpicker" />
-<button class="Draw" onClick="toggleDrawing()">Draw</button>
-<button class="Delete" onClick="deleteSelected()">Delete</button>
-<button class="save" onClick="save()">Save</button>
-<br>
-Brush size: <input id="size" type="range" min="1" max="100" step="1" value="20"><br/>
+    <button onClick="addRect()">Rect</button>
+    <button onClick="addCircle()">Circle</button>
+    <button onClick="addTriangle()">Triangle</button>
+    <button onClick="addText()">Text</button>
+    <input type="color" id="colorpicker" />
+    <button onClick="toggleDrawing()">Draw</button>
+    <button onClick="deleteSelected()">Delete</button>
+    <button onClick="save()">Save</button>
+    <button onClick="undo()">Undo</button>
+    <button onClick="redo()">Redo</button>
+    <button onClick="clearCanvas()">Clear</button>
+
+    <br>
+    Brush size: <input id="size" type="range" min="1" max="100" step="1" value="20"><br/>
 
 
-<canvas id="drawing" width="720" height="600" ></canvas>
-<script src='./lib/fabric.min.js'></script>
-<script  src="js/index.js"></script>
+    <canvas id="drawing" width="720" height="600" ></canvas>
+    <script src='./lib/fabric.min.js'></script>
+    <script  src="js/index.js"></script>
 
 
 </body>
