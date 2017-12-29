@@ -74,6 +74,21 @@ function clearCanvas() {
     canvas.renderAll();
 }
 
+function addImage() {
+	var srcImg = "http://fabricjs.com/lib/pug.jpg";
+
+	fabric.Image.fromURL(srcImg, function(oImg) {
+oImg.set({
+stroke:'red',
+strokeWidth:10
+});
+  canvas.add(oImg);
+  canvas.renderAll();
+ oImg.center();
+});
+//canvas.renderAll();
+}
+
 
 function addText() {
     var text = new fabric.IText('HELLO',{fontSize:16,left:20,top:20});
