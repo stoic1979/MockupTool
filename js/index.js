@@ -1,6 +1,4 @@
 var canvas = new fabric.Canvas('drawing', {
-  width: window.innerWidth,
-  height: window.innerWidth - 50,
   isDrawingMode: false,
   backgroundColor: '#fff'
 });
@@ -80,4 +78,3 @@ function download(canvas111, filename) {
         console.log(e.target.value);
          canvas.freeDrawingBrush.color = e.target.value;
     });
-    

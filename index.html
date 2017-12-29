@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body bgcolor="#444444">
 
 <button class="square">Square</button>
 <button class="circle">Circle</button>
@@ -16,9 +16,11 @@
 <button class="Draw" onClick="toggleDrawing()">Draw</button>
 <button class="Delete" onClick="deleteSelected()">Delete</button>
 <button class="save" onClick="save()">Save</button>
+<br>
+Brush size: <input id="size" type="range" min="1" max="100" step="1" value="20"><br/>
 
 
-<canvas id="drawing" width="500" height="500" ></canvas>
+<canvas id="drawing" width="720" height="600" ></canvas>
 <script src='./lib/fabric.min.js'></script>
 <script  src="js/index.js"></script>
 
