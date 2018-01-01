@@ -34,7 +34,7 @@ function updateModifications(savehistory) {
     }
 }
 
-undo = function undo() {
+function undo() {
 
 
     if (mods < state.length) {
@@ -52,7 +52,7 @@ undo = function undo() {
     }
 }
 
-redo = function redo() {
+function redo() {
     if (mods > 0) {
         canvas.clear().renderAll();
         canvas.loadFromJSON(state[state.length - 1 - mods + 1]);
@@ -75,18 +75,18 @@ function clearCanvas() {
 }
 
 function addImage() {
-	var srcImg = "http://fabricjs.com/lib/pug.jpg";
+    var srcImg = "http://fabricjs.com/lib/pug.jpg";
 
-	fabric.Image.fromURL(srcImg, function(oImg) {
-oImg.set({
-stroke:'red',
-strokeWidth:10
-});
-  canvas.add(oImg);
-  canvas.renderAll();
- oImg.center();
-});
-//canvas.renderAll();
+    fabric.Image.fromURL(srcImg, function(oImg) {
+        oImg.set({
+            stroke:'red',
+            strokeWidth:10
+        });
+        canvas.add(oImg);
+        canvas.renderAll();
+        oImg.center();
+    });
+    //canvas.renderAll();
 }
 
 
